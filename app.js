@@ -140,25 +140,25 @@ seekBar.addEventListener('change', () => {
     music.currentTime = seekBar.value;
 })
 
-// repeat button
+// 循环
 
-let isRepeatActive = false; // 跟踪重播状态
+let isRepeatActive = false;
 
 repeatBtn.addEventListener('click', () => {
-    isRepeatActive = !isRepeatActive; // 切换重播状态
-    repeatBtn.classList.toggle('active'); // 切换按钮的激活状态
+    isRepeatActive = !isRepeatActive;
+    repeatBtn.classList.toggle('active');
 });
 
 music.addEventListener('ended', () => {
     if (isRepeatActive) {
-        setMusic(currentMusic); // 重新设置当前音乐
-        playBtn.click(); // 重新播放
+        setMusic(currentMusic);
+        playBtn.click();
     } else {
-        forwardBtn.click(); // 切换到下一首音乐
+        forwardBtn.click();
     }
 });
 
-// volume section
+// 音量
 
 volumeBtn.addEventListener('click', () => {
     volumeBtn.classList.toggle('active');
